@@ -1,13 +1,12 @@
 Package: coloR
-Title: What the Package Does (One Line, Title Case)
+Title: Various Tools for Working with Color
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "First",
-           family = "Last",
+    person(given = "FDavid",
+           family = "Perez Carballo",
            role = c("aut", "cre"),
-           email = "first.last@example.com")
-Description: What the package does (one paragraph).
-License: What license it uses
-Encoding: UTF-8
+           email = "dpcarballo@protonmail.com")
+Description: Provides tools that facilitate color manipulation in R, as well for its practical application in plots. It supports various formats and palettes.
+License: TO BE ADDED
 LazyData: true
 RoxygenNote: 6.1.1
