@@ -7,9 +7,19 @@
 complementary(...)
 }
 \arguments{
-\item{...}{Color whose complementary is to be calculated. Hexcode, c(r,g,b), color 
+\item{...}{Color whose complementary is to be calculated. Hexcode, c(r,g,b), color
 name as character and "color" class object are all supported.}
+}
+\value{
+Generally, a hexcode representing the input's complementary. If a "color" class object is received as argument, the complementary will keep this format.
 }
 \description{
 Returns the complementary color to that it receives as input
+}
+\examples{
+complementary("red")
+complementary("#ff00ff")
+complementary(0,128,128)
+complementary(c(0,0,0))
+complementary(color(c(.7,.25,.25), maxVal=1))
 }

@@ -4,10 +4,14 @@
 \alias{hex}
 \title{Gets hexcode from a "color" object.}
 \usage{
-hex(color)
+hex(col)
 }
 \arguments{
-\item{color}{An object of class "color"}
+\item{col}{Color whose complementary is to be calculated. Hexcode, c(r,g,b), color
+name as character and "color" class object are all supported.}
+}
+\value{
+A string containing col's hex code
 }
 \description{
 Gets hexcode from a "color" object.

@@ -9,6 +9,15 @@ mantissa(x)
 \arguments{
 \item{x}{Number to calculate mantissa.}
 }
+\value{
+A number between 0 and 1 equal to x's mantissa.
+}
 \description{
 Calculates a number's mantissa (decimal part, or distance to the nearest lower integer)
+}
+\examples{
+mantissa(5)
+mantissa(-5)
+mantissa(5.3)
+mantissa(-5.3)
 }

@@ -2,9 +2,11 @@
 % Please edit documentation in R/mix.R
 \name{mix}
 \alias{mix}
-\title{Creates an object of class "color" as a mixture of the colors it receives as input.}
+\title{Creates an object of class "color" as a mixture of the colors it receives as input.
+TODO: Arranxar o metodo "paint"}
 \usage{
-mix(..., method = "light", average = FALSE, output = "hex")
+mix(..., method = "light", average = method == "paint",
+  output = "hex")
 }
 \arguments{
 \item{...}{Colors to be mixed. Hexcode, c(r,g,b), color
@@ -17,8 +19,16 @@ the function will add the inputs together. When working with "paint" method, ave
 recommended to represent accurately the mixture of actual paint from idfferent colors.}
 
 \item{output}{Format in which output will be returned. Use "hex" to get a hexcode. Use "color"
-for a "color" class object to be returned. Defaults to "Hex}
+for a "color" class object to be returned. Defaults to "hex"}
+}
+\value{
+A hexcode or class "color" object resulting of a mixture of the inputted colors
 }
 \description{
 Creates an object of class "color" as a mixture of the colors it receives as input.
+TODO: Arranxar o metodo "paint"
+}
+\examples{
+mix("red", "blue", method="light")
+mix("red", "blue", method="paint")
 }

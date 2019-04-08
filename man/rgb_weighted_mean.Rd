@@ -4,7 +4,8 @@
 \alias{rgb_weighted_mean}
 \title{Finds a color between those received as input in RGB palette}
 \usage{
-rgb_weighted_mean(col1, col2, w1 = 0.5, w2 = 1 - w1, output = "hex")
+rgb_weighted_mean(col1, col2, w1 = 0.5, smooth_factor = 2,
+  output = "hex")
 }
 \arguments{
 \item{col1}{First color. Hexcode, c(r,g,b), color
@@ -15,11 +16,20 @@ name as character and "color" class object are all supported.}
 
 \item{w1}{Number between 0 and 1. Represents how similar the output will be to col1. Defaults to .5}
 
-\item{w2}{Number between 0 and 1. Represents how similar the output will be to col2. Defaults to 1-w1}
+\item{smooth_factor}{Correction to prevent mixtures from appearing too dark, making the palette more related to human perception of color. Defaults to 2}
 
 \item{output}{Format in which output will be returned. Use "hex" to get a hexcode. Use "color"
 for a "color" class object to be returned. Defaults to "hex"}
+
+\item{w2}{Number between 0 and 1. Represents how similar the output will be to col2. Defaults to 1-w1}
+}
+\value{
+The corresponding hexcode or "color" class object.
 }
 \description{
 Finds a color between those received as input in RGB palette
+}
+\examples{
+ rgb_weighted_mean("red", "green", smooth_factor=1)
+ rgb_weighted_mean("red", "green", smooth_factor=7000)
 }

@@ -4,7 +4,7 @@
 \alias{hsv_color}
 \title{Creates an object of class "color" from HSV palette specifications}
 \usage{
-hsv_color(h, s, v, vmax = 1, hmax = 1)
+hsv_color(h, s, v, hmax = 1, vmax = 1)
 }
 \arguments{
 \item{h}{Hue}
@@ -13,10 +13,18 @@ hsv_color(h, s, v, vmax = 1, hmax = 1)
 
 \item{v}{Value}
 
-\item{vmax}{Maximum permitted input for value. Defaults to 1}
-
 \item{hmax}{Perimeter of the colour circle. Defaults to 1}
+
+\item{vmax}{Maximum permitted input for value. Defaults to 1}
+}
+\value{
+The corresponding object of class "color".
 }
 \description{
 Creates an object of class "color" from HSV palette specifications
+}
+\examples{
+hsv_color(0,1,1)
+hsv_color(3.1416, 1, 1, hmax=2*pi)
+hsv_color(.5, .5, 128, vmax=255)
 }

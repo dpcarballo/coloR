@@ -16,3 +16,9 @@ name as character and "color" class object are all supported.}
 \description{
 Calculates a measure of the contrast between col1 and col2
 }
+\examples{
+rgb_dist("green", "blue")
+rgb_dist(c(255,0,0), c(127,0,0))
+rgb_dist(color("blue"), color("black"))
+rgb_dist("lightblue", "black")
+}

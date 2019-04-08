@@ -4,20 +4,31 @@
 \alias{color_gradient}
 \title{Creates colors in a gradient between those received as input.}
 \usage{
-color_gradient(..., steps = 1, method = "hsv", output = "hex")
+color_gradient(..., steps = 1, smooth_factor = 2, method = "hsv",
+  output = "hex")
 }
 \arguments{
 \item{...}{Colors that the user wants to belong to the gradient. Hexcode, c(r,g,b), color
-name as character and "color" class object are all supported.}
+name as character and "color" class object are all supported. Inputting all of them as a list is also allowed}
 
 \item{steps}{Number of intermeddiate colors between those specified by the user}
+
+\item{smooth_factor}{Parameter smooth_factor hor rgb_weighted_mean call. Defaults to 2}
 
 \item{method}{Procedure to create the gradient. "hsv" and "rgb" are accepted as options.
 Defaults to "hsv}
 
 \item{output}{Format in which output will be returned. Use "hex" to get a hexcode. Use "color"
-for a "color" class object to be returned. Defaults to "Hex}
+for a "color" class object to be returned. Defaults to "hex"}
+}
+\value{
+By default, character version containing hexcodes for every color belonging in the gradient. Using "color" as output, a list of class "color" objects representing the gradient
 }
 \description{
 Creates colors in a gradient between those received as input.
+}
+\examples{
+color_gradient("black", "red", "white", steps=3, method="rgb")
+color_gradient("red", "green", "blue")
+color_gradient("black","white", steps=11)
 }

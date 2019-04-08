@@ -12,6 +12,15 @@ three single numbers representing r,g,b respectively}
 
 \item{maxVal}{Value assigned to represent maximum amount of light. Defaults to 255}
 }
+\value{
+An object of class "color" made from specifications given in the arguments
+}
 \description{
 Creates an object of class 'color'
+}
+\examples{
+color(255,0,0)
+color("magenta")
+color(c(0,255,0))
+color("#0000ff")
 }

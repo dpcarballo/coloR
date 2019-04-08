@@ -7,8 +7,17 @@
 get_hsv(col)
 }
 \arguments{
-\item{col}{An object of class color.}
+\item{col}{Color whose complementary is to be calculated. Hexcode, c(r,g,b), color
+name as character and "color" class object are all supported.}
+}
+\value{
+A list with col's HSV specifications.
 }
 \description{
 Gets HSV specifications from a "color" object
+}
+\examples{
+get_hsv("red")
+get_hsv("#00ff00")
+get_hsv(c(25,25,25))
 }

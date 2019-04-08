@@ -9,12 +9,13 @@
 #' @param maxrep maxrep parameter for maximize_contrast function call
 #' @param maxit maxit parameter for maximize_contrast function call
 #' @param h h parameter for maximize_contrast function call
-#' @param hex Output format. "hex" and "color" supported.
+#' @param output Output format. "hex" and "color" supported.
+#' @return A list of
 maximum_contrast_colors <- function(..., n, remove_white=TRUE, seed=1, maxrep=10, maxit=100, h=1e-8, output="hex") {
   set.seed(1)
   if(missing(...) & n<2) {
-    warning("Less than two colors were asked for!")
-    if(output=="color") {
+    warning("Less than two colors were asked for! Returning black")
+    if(output=="hex") {
       return(list("#000000"))
     } else {
       return(list(color("#000000")))

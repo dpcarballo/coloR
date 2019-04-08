@@ -4,6 +4,11 @@
 #' @param c Amount to cyan light
 #' @param k Amount of black paint. Defaults to 0
 #' @param maxVal Value assigned to represent maximum amount of paint. Defaults to 255
+#' @return An object of class color.
+#' @examples
+#' paint_color(255,255,0)
+#' paint_color(255,255,0,128)
+#' paint_color(0, 1, 1, maxVal=1)
 paint_color <- function(y, m, c, k=0, maxVal=255) {
   if(y>maxVal)
     warning("yellow exceedes maximum allowed value")

@@ -2,12 +2,11 @@
 % Please edit documentation in R/df_color.R
 \name{df_color}
 \alias{df_color}
-\title{Appends a column named "color" to a data frame containing hex codes (ready
+\title{Appends a column to a data frame containing hex codes (ready
 for usage in a plot) The values are determined by a user-specified column.}
 \usage{
 df_color(df, column, output_name = "color", min_color = "green",
-  max_color = "red", min_value = min(df[, column]),
-  max_value = max(df[, column]), method = "hsv")
+  max_color = "red", method = "hsv", smooth_factor = 2)
 }
 \arguments{
 \item{df}{Data frame containing the original data.}
@@ -20,13 +19,19 @@ df_color(df, column, output_name = "color", min_color = "green",
 
 \item{max_color}{Color to be assigned to the row with the highest value. Defaults to red.}
 
-\item{min_value}{Allows the user to customize the value that gets min_color assigned. Defaults to the minium of all observations.}
-
-\item{max_value}{Allows the user to customize the value that gets max_color assigned. Defaults to the maximum of all observations.}
-
 \item{method}{Type of gradient. Allows both "rgb" and "hsv". Defaults to "hsv"}
+
+\item{smooth_factor}{Parameter "smooth_factor" for "rgb_weighted_mean" call}
+}
+\value{
+A data frame identical to df, except for an extra column (whose name is given by output_name) containing hexcodes
 }
 \description{
-Appends a column named "color" to a data frame containing hex codes (ready
+Appends a column to a data frame containing hex codes (ready
 for usage in a plot) The values are determined by a user-specified column.
+}
+\examples{
+plot(mtcars$hp, mtcars$disp, col=df_color(mtcars, "wt")$color, pch=18, cex=1.5)
+plot(mtcars$hp, mtcars$disp, col=df_color(mtcars, "wt", min_color="darkblue", max_color="darkred")$color, pch=18, cex=1.5)
+plot(mtcars$hp, mtcars$disp, col=df_color(mtcars, "wt", min_color="darkblue", max_color="darkred", method="rgb", smooth_factor=1)$color, pch=18, cex=1.5)
 }

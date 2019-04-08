@@ -4,13 +4,13 @@
 \alias{df_color3}
 \title{Appends a column named "color" to a data frame containing hex codes (ready
 for usage in a plot) Three different columns from a data frame provide amounts for red, green
-and blue light, which combine into a color for each observation, thus allowing the user to 
-represent simultaneaously up to three columns using color.}
+and blue light, which combine into a color for each observation, thus allowing the user to
+represent simultaneaously up to three columns using color.
+Darker/lighter colors represent simultaneous low/high values for all values.
+Red/green/blue-ish colors represent high values in column1/2/3, but low ones in the remaining.
+Cyan/magenta/yellow-ish colors represent low values in column1/2/3, but high ones in the remaining.}
 \usage{
 df_color3(df, column1, column2, column3, output_name = "color",
-  min_value1 = min(df[, column1]), max_value1 = max(df[, column1]),
-  min_value2 = min(df[, column2]), max_value2 = max(df[, column2]),
-  min_value3 = min(df[, column3]), max_value3 = max(df[, column3]),
   avoid_white = TRUE)
 }
 \arguments{
@@ -24,23 +24,21 @@ df_color3(df, column1, column2, column3, output_name = "color",
 
 \item{output_name}{Name for the column in which the output will be stored. Defaults to "color"}
 
-\item{min_value1}{Allows the user to customize the value for column1 that gets no red light assigned. Defaults to the minium of all observations.}
-
-\item{max_value1}{Allows the user to customize the value for column1 that gets maximum red light assigned. Defaults to the maximum of all observations.}
-
-\item{min_value2}{Allows the user to customize the value for column1 that gets no green light assigned. Defaults to the minium of all observations.}
-
-\item{max_value2}{Allows the user to customize the value for column1 that gets maximum green light assigned. Defaults to the maximum of all observations.}
-
 \item{avoid_white}{When set to TRUE, corrects colors that would be hard to distinguish in a white background.}
-
-\item{min_value2}{Allows the user to customize the value for column1 that gets no blue light assigned. Defaults to the minium of all observations.}
-
-\item{max_value2}{Allows the user to customize the value for column1 that gets maximum blue light assigned. Defaults to the maximum of all observations.}
+}
+\value{
+A data frame identical to df, except for an extra column (whose name is given by output_name) containing hexcodes.
 }
 \description{
 Appends a column named "color" to a data frame containing hex codes (ready
 for usage in a plot) Three different columns from a data frame provide amounts for red, green
-and blue light, which combine into a color for each observation, thus allowing the user to 
+and blue light, which combine into a color for each observation, thus allowing the user to
 represent simultaneaously up to three columns using color.
+Darker/lighter colors represent simultaneous low/high values for all values.
+Red/green/blue-ish colors represent high values in column1/2/3, but low ones in the remaining.
+Cyan/magenta/yellow-ish colors represent low values in column1/2/3, but high ones in the remaining.
+}
+\examples{
+plot(mtcars$hp, mtcars$disp, col=df_color3(mtcars, "drat", "wt", "mpg")$color, pch=18, cex=1.5)
+plot(mtcars$hp, mtcars$disp, col=df_color3(mtcars, "drat", "wt", "mpg", avoid_white=FALSE)$color, pch=18, cex=1.5)
 }

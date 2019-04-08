@@ -17,6 +17,14 @@ paint_color(y, m, c, k = 0, maxVal = 255)
 
 \item{maxVal}{Value assigned to represent maximum amount of paint. Defaults to 255}
 }
+\value{
+An object of class color.
+}
 \description{
 Creates an object of class "color" from a mixture of paint primary colors (YMCK palette)
+}
+\examples{
+paint_color(255,255,0)
+paint_color(255,255,0,128)
+paint_color(0, 1, 1, maxVal=1)
 }

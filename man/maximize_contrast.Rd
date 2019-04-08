@@ -9,7 +9,7 @@ maximize_contrast(..., maxrep = 10, maxit = 100, h = 1e-08,
   output = "hex")
 }
 \arguments{
-\item{...}{All the colors of interest. Hexcode, c(r,g,b), color 
+\item{...}{All the colors of interest. Hexcode, c(r,g,b), color
 name as character and "color" class object are all supported.}
 
 \item{maxrep}{Number of times the process of local optimization will be repeated. Defaults to 10}
@@ -18,7 +18,15 @@ name as character and "color" class object are all supported.}
 
 \item{h}{Step used to calculate the gradient of the contrast function. Defaults to 1e-8}
 }
+\value{
+Either a hexcode or class "color" object with highest contrast with those inputted.
+}
 \description{
 Finds the highest contrast color available for those specified by the user.
 Uses gradient-descent optimization on the "contrast" function.
+}
+\examples{
+maximize_contrast("green")
+maximize_contrast("yellow", "red")
+maximize_contrast(list("yellow", "red", c(0,255,0)))
 }

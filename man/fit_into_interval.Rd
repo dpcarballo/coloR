@@ -13,6 +13,9 @@ fit_into_interval(x, min = 0, max = 255)
 
 \item{max}{Upper bound of the interval. If x is higher than max, the function will return max.}
 }
+\value{
+min, x or max depending on whether x was below, between or above both min and max
+}
 \description{
 Corrects a number to be in a given interval
 }

@@ -18,6 +18,9 @@ optimal_step(x, d, ..., pasos = c(0, 1e-08, 2e-08, 5e-08, 1e-07, 2e-07,
 
 \item{pasos}{Candidate steps to choose from}
 }
+\value{
+A number equal to best step in the list
+}
 \description{
 Calculates best possible step for contrast gradient descent optimization.
 }

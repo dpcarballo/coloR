@@ -25,7 +25,10 @@ for consistency between executions.}
 
 \item{h}{h parameter for maximize_contrast function call}
 
-\item{hex}{Output format. "hex" and "color" supported.}
+\item{output}{Output format. "hex" and "color" supported.}
+}
+\value{
+A list of
 }
 \description{
 Finds as many high-contrast colors as specified by the user.

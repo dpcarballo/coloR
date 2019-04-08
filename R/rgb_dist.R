@@ -3,6 +3,12 @@
 #' name as character and "color" class object are all supported.
 #' @param col2 Hexcode, c(r,g,b), color
 #' name as character and "color" class object are all supported.
+#' @examples
+#' rgb_dist("green", "blue")
+#' rgb_dist(c(255,0,0), c(127,0,0))
+#' rgb_dist(color("blue"), color("black"))
+#' rgb_dist("lightblue", "black")
+
 rgb_dist <- function(col1, col2) {
   UseMethod("rgb_dist")
 }

@@ -2,6 +2,13 @@
 #' @param ... A character containing a color name, a hexcode, a c(r,g,b) vector or
 #' three single numbers representing r,g,b respectively
 #' @param maxVal Value assigned to represent maximum amount of light. Defaults to 255
+#' @return An object of class "color" made from specifications given in the arguments
+#' @examples
+#' color(255,0,0)
+#' color("magenta")
+#' color(c(0,255,0))
+#' color("#0000ff")
+
 color <- function(..., maxVal=255) {
   col = list()
   class(col)="color"

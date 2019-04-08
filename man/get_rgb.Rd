@@ -7,8 +7,16 @@
 get_rgb(col)
 }
 \arguments{
-\item{col}{An object of class color.}
+\item{col}{Color whose complementary is to be calculated. Hexcode, c(r,g,b), color
+name as character and "color" class object are all supported.}
+}
+\value{
+A vector containing col's RGB specifications.
 }
 \description{
 Gets RGB specifications from a "color" object
+}
+\examples{
+get_rgb("green")
+get_rgb(c(255,0,255))
 }
