@@ -7,7 +7,7 @@
 get_rgb(col)
 }
 \arguments{
-\item{col}{Color whose complementary is to be calculated. Hexcode, c(r,g,b), color
+\item{col}{Color whose RGB is to be returned. Hexcode, c(r,g,b), color
 name as character and "color" class object are all supported.}
 }
 \value{

@@ -2,10 +2,13 @@ Package: coloR
 Title: Various Tools for Working with Color
 Version: 0.0.0.9000
 Authors@R: 
-    person(given = "FDavid",
+    person(given = "David",
            family = "Perez Carballo",
            role = c("aut", "cre"),
            email = "dpcarballo@protonmail.com")
+Imports:
+	grDevices,
+	gplots
 Description: Provides tools that facilitate color manipulation in R, as well for its practical application in plots. It supports various formats and palettes.
 License: TO BE ADDED
 LazyData: true
